@@ -26,19 +26,20 @@
 				<h3>LOG IN</h3>
 			</div>
 			<div class="card-body">
-				<form action = "{{url('admin-dashboard')}}">
+				<form action = "{{url('user-login')}}" method="POST">
+					@csrf
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="email" class="form-control" placeholder="EMAIL" required autofocus>
+						<input type="email" name="email" class="form-control" placeholder="EMAIL" required autofocus>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="PASSWORD" required>
+						<input type="password" name="password" class="form-control" placeholder="PASSWORD" required>
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
